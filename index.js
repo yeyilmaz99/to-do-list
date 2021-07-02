@@ -14,7 +14,7 @@ let dones = [
     "See the doctor"
 ];
 let readyList = "";
-toDos.forEach(toDo => { 
+toDos.forEach(toDo => {
     readyList += `<li onclick= "moveToTheOtherList(this)" class=" btn list-group-item"> ${toDo} </li>`
 });
 
@@ -25,15 +25,22 @@ let doneList = "";
 dones.forEach(done => {
     doneList += `<li onclick= "moveToTheOtherList(this)" class=" btn list-group-item"> ${done} </li>`
 });
-document.getElementById("done-list").innerHTML =doneList;
+document.getElementById("done-list").innerHTML = doneList;
 
 function moveToTheOtherList(elem) {
-    if(elem.parentElement.id == "todo-list"){
+    if (elem.parentElement.id == "todo-list") {
         elem.parentNode.removeChild(elem);
         document.getElementById("done-list").appendChild(elem);
-    }else{
+    } else {
         elem.parentNode.removeChild(elem);
         document.getElementById("todo-list").appendChild(elem);
     }
 
 }
+
+function getInputValue(){
+    let inputVal = document.getElementById("input").value;
+    let inputValHTML;
+    inputValHTML = `<li onclick= "moveToTheOtherList(this)" class=" btn list-group-item"> ${inputVal} </li>`
+    document.getElementById("todo-list").innerHTML += inputValHTML;
+};
