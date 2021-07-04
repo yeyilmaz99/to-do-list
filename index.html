@@ -1,4 +1,4 @@
-<html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -8,37 +8,67 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Bootstrap CSS -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
 	<link rel="stylesheet" href="style.css">
 	<title>My Task List</title>
 </head>
 
 <body>
-	<div class="container" style="padding-top: 50px;">
-		<div class="row">
-			<input id= "input" class="form-control" type="text" placeholder="Type something..." id="myInput">
-			<button class="btn btn-primary" type="button" onclick= "getInputValue();">Add to list</button>
+
+	<div class="container p-3">	
+		<h1 class="app-title" id="header">To Do App</h1>	
+		<div class="card">
+			<div id="cardhedir" class="card-header">
+				New Task
+			</div>
+			<div class="card-body">
+				<form id="addTaskForm">
+					<div class="input-group mb-3">
+						<input id="txtTaskName" name="taskName" type="text" class="form-control" placeholder="Type a new task" aria-describedby="btnAddNewTask">
+						<div class="input-group-append">
+							<button class="btn btn-primary" type="submit" id="btnAddNewTask">
+								<i class="fas fa-plus"></i>
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-6">
-				<ul id="todo-list" class="list-group">
-				</ul>
-			</div>
-			<div class="col-sm-6">
-				<ul id="done-list" class="list-group">
+			<div class="col-md-6">
+				<div class="card mt-3">
+					<div class="card-header">
+						<h5>Task List</h5>
+							<a id="btnDeleteAll" href="#" class="btn btn-outline-danger btn-sm delete-all float-right">	
+								Delete All
+							</a>
+					</div>
+		
+					<ul id="task-list" class="list-group">
+		
+					</ul>
+				</div>
+				</div>
+		<div class="col-md-6">
+			<div class="card mt-3 cardmt3">
+				<div class="card-header cardheader" >
+					<h5>Done List</h5>
+						<a id="btnDeleteAllDoneList" href="#" class="btn btn-outline-danger btn-sm delete-all float-right">	
+							Delete All
+						</a>
+				</div>
+	
+				<ul id="done-list" class="list-group list1">
+	
 				</ul>
 			</div>
 		</div>
+
 	</div>
-
-
+</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-		crossorigin="anonymous"></script>
-
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<script src="index.js"></script>
 </body>
 
